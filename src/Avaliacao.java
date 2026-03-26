@@ -2,24 +2,41 @@ import java.util.Scanner;
 
 public class Avaliacao {
     public static void main(String[] args) {
-        System.out.println("Por favor insira dois numeros inteiros que deseja comparar");
         Scanner scanner = new Scanner(System.in);
-        int inteiro1 = scanner.nextInt();
-        int inteiro2 = scanner.nextInt();
-        if (inteiro1 > inteiro2)
-            System.out.println("O primeiro inteiro e maior!");
 
-        else if (inteiro1 < inteiro2) {
-                        System.out.println("o segundo inteiro e maior! ");
+        /// Recebe o nome
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
 
-        } else {
-            System.out.println("Os numeros inteiros são iguais!");
+        /// Recebe um número positivo
+        System.out.print("Digite um número positivo: ");
+        int n = scanner.nextInt();
+
+        /// Crescente: de 0 até n
+        System.out.println("\nCrescente:");
+        for (int i = 0; i <= n; i++) {
+            System.out.print(i + " ");
         }
 
+        /// Decrescente: de n até 0
+        System.out.println("\nDecrescente:");
+        for (int i = n; i >= 0; i--) {
+            System.out.print(i + " ");
+        }
 
+        /// Verifica tamanho do nome
+        System.out.println("\n");
 
+        if (nome.length() > 6) {
+            System.out.println("Nome com mais de 6 letras:");
+            for (int i = 0; i < n; i++) {
+                System.out.println(nome);
+            }
+        } else {
+            System.out.println("Nome com 6 letras ou menos:");
+            System.out.println(nome);
+        }
 
-
-
+        scanner.close();
     }
 }
